@@ -34,6 +34,7 @@ function showNextSlide() {
     sliderCount = sliderImages.length - 1;
   }
   rollSlide();
+  currentSlide(sliderCount);
 }
 function showPrevSlide() { 
   sliderCount--;
@@ -41,7 +42,21 @@ function showPrevSlide() {
     sliderCount = 0;
   }
   rollSlide();
+  currentSlide(sliderCount);
 }
+
+function currentSlide(index) { 
+  sliderDots.forEach(item => item.classList.remove('active-dot'));
+  sliderDots[index].classList.add('active-dot');
+}
+
+sliderDots.forEach((dot, index) => { 
+  dot.addEventListener('click', () => { 
+    sliderCount = index;
+    rollSlide();
+    currentSlide(sliderCount);
+  })
+})
 
 
 sliderBtnNext.addEventListener('click', showNextSlide);
