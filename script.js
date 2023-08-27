@@ -8,8 +8,25 @@ let sliderWidth = document.querySelector('.slider__img').offsetWidth;
 let sliderCount = 0;
 
 
+
 function rollSlide() {
   sliderLine.style.transform = `translateX(-${sliderWidth * sliderCount}px)`;
+  disabledArrowNext();
+  disabledArrowPrev();
+}
+function disabledArrowNext() { 
+if (sliderCount >= sliderImages.length - 1) {
+    sliderBtnNext.classList.add('disabled');
+  } else { 
+    sliderBtnNext.classList.remove('disabled');
+  }
+};
+function disabledArrowPrev() { 
+  if (sliderCount <= 0) {
+    sliderBtnPrev.classList.add('disabled');
+  } else { 
+    sliderBtnPrev.classList.remove('disabled');
+  }
 }
 function showNextSlide() { 
   sliderCount++;
@@ -25,6 +42,7 @@ function showPrevSlide() {
   }
   rollSlide();
 }
+
 
 sliderBtnNext.addEventListener('click', showNextSlide);
 sliderBtnPrev.addEventListener('click', showPrevSlide);

@@ -47,6 +47,10 @@ button img{
   top: calc(50% - 25px);
   right: 1%;
 }
+.disabled{
+  pointer-events: none;
+  filter: blur(2px);
+}
 .slider__pagination {
   height: 50px;
   display: flex;
