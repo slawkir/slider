@@ -11,18 +11,16 @@
   padding: 50px 0;
 }
 .slider__wrapper {
-  /* display: flex; */
   width: 400px;
-  /* height: 300px; */
   overflow: hidden;
 }
 .slider__line {
   display: flex;
+  transition: all 1s;
  
 }
 .slider__img {
   width: 400px;
-  /* height: 300px; */
 }
 .slider__btn-prev, .slider__btn-next {
   width: 60px;
